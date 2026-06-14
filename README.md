@@ -1,74 +1,79 @@
 # NHAI SecureID
+Offline Workforce Identity Verification Platform for NHAI Hackathon 7.0🚀
 
 > Verify Anywhere. Trust Everywhere.
 
-NHAI SecureID is an offline-first workforce identity verification platform built using React Native. The project was originally developed for NHAI Hackathon 7.0 and is being enhanced into a production-grade biometric authentication system designed for deployment in remote, low-connectivity environments.
+NHAI SecureID is a mobile-first offline workforce identity verification platform built using React Native. The project was originally developed for NHAI Hackathon 7.0 and is being evolved into a production-grade biometric authentication system capable of operating in remote, zero-network environments.
 
 ---
 
-## Overview
+## Problem Statement
 
-Field personnel working on highway construction and infrastructure projects often operate in areas where internet connectivity is unreliable or unavailable. Traditional cloud-dependent authentication systems become ineffective in such environments, leading to operational delays and identity verification challenges.
+Field personnel working on highway construction and infrastructure projects often operate in locations with unreliable or no internet connectivity.
 
-NHAI SecureID addresses this problem by providing a mobile-based offline verification workflow that enables workforce enrollment, identity validation, local record management, and synchronization once connectivity is restored.
+Traditional attendance and identity verification systems rely on cloud connectivity, making them unsuitable for remote deployment. This creates challenges such as:
 
----
+* Proxy attendance
+* Identity fraud
+* Delayed verification
+* Lack of auditability
+* Dependence on continuous internet access
 
-## Key Features
-
-### Offline-First Architecture
-
-* Operates without active internet connectivity
-* Designed for remote and zero-network zones
-* Local-first verification workflow
-
-### Workforce Enrollment
-
-* Camera-based worker enrollment
-* Unique worker ID generation
-* Local registry management
-
-### Identity Verification
-
-* Camera-assisted verification workflow
-* Verification logging and audit trail support
-* Designed for future biometric matching integration
-
-### Synchronization Center
-
-* Offline queue management
-* Sync status dashboard
-* Designed for AWS Datalake integration
-
-### Cross-Platform Deployment
-
-* Android support
-* iOS-ready architecture
-* React Native codebase
+NHAI SecureID aims to provide secure, offline-first identity verification while maintaining privacy, scalability, and ease of deployment.
 
 ---
 
-## Current Implementation
+## Current Prototype Features
 
-The current prototype includes:
+### Implemented
 
-✅ React Native application architecture
+* React Native cross-platform architecture
+* Android deployment pipeline
+* Camera integration using Vision Camera
+* Workforce enrollment workflow
+* Worker ID generation
+* Local worker registry
+* Identity verification workflow
+* Sync dashboard
+* Offline-first application flow
+* State-managed worker records and verification logs
 
-✅ Android deployment pipeline
+### Screens
 
-✅ Camera integration using Vision Camera
+* Home Dashboard
+* Workforce Enrollment
+* Identity Verification
+* Synchronization Center
 
-✅ Workforce enrollment workflow
+---
 
-✅ Worker registry management
+## Planned AI Pipeline
 
-✅ Verification workflow
+The long-term architecture is designed around lightweight edge AI models.
 
-✅ Synchronization dashboard
+### Face Detection
 
-✅ Offline state management
+**BlazeFace**
 
-✅ Navigation and multi-screen application structure
+* Fast mobile face detection
+* Optimized for low-power devices
+* Small model footprint
+
+### Face Recognition
+
+**MobileFaceNet**
+
+* Lightweight facial embedding generation
+* Suitable for on-device inference
+* Designed for real-time recognition
+
+### Liveness Detection
+
+**MediaPipe Face Mesh**
+
+* Blink detection
+* Head movement analysis
+* Basic anti-spoofing protection
 
 ---
 
@@ -78,111 +83,84 @@ The current prototype includes:
 Camera
    │
    ▼
-Workforce Enrollment
+Enrollment
    │
    ▼
 Local Identity Registry
    │
    ▼
-Identity Verification
+Offline Verification
    │
    ▼
 Pending Sync Queue
    │
    ▼
-Synchronization Layer
+AWS Synchronization Layer
    │
    ▼
-NHAI Datalake Integration
+Datalake 3.0 Integration
 ```
 
 ---
 
 ## Technology Stack
 
-### Mobile Application
+### Mobile
 
 * React Native
 * TypeScript
 * React Navigation
 * React Native Vision Camera
 
-### State Management
+### Planned AI Stack
 
-* React Context API
-* Local application state
+* TensorFlow Lite
+* BlazeFace
+* MobileFaceNet
+* MediaPipe Face Mesh
 
-### Development Environment
+### Backend (Planned)
 
-* Android Studio
-* Gradle
-* Java 17
-* React Native CLI
+* AWS API Gateway
+* AWS Lambda
+* DynamoDB
+* Amazon S3
 
----
+### Storage
 
-## In Progress
-
-The following enhancements are currently being developed:
-
-* Real-time face detection
-* Facial embedding generation
-* Liveness detection pipeline
-* Secure biometric storage
-* Performance optimization for mid-range devices
+* Local State Management
+* SQLite (planned)
+* SQLCipher (planned)
 
 ---
 
-## Planned Enhancements
+## Security Roadmap
 
-### Computer Vision
-
-* BlazeFace face detection
-* MobileFaceNet face recognition
-* MediaPipe Face Mesh liveness verification
-
-### Security
+The production version is planned to include:
 
 * AES-256 encrypted local storage
-* Device-bound identity vault
-* Secure synchronization workflow
-
-### Cloud Integration
-
-* AWS synchronization services
-* Datalake 3.0 integration
+* Secure key management
+* Device-bound authentication
+* Offline identity vault
 * Sync-and-purge architecture
+* Zero-knowledge biometric design
 
 ---
 
-## Project Goals
+## Development Roadmap
 
-* Enable workforce authentication in remote locations
-* Reduce proxy attendance and identity fraud
-* Support low-connectivity infrastructure projects
-* Maintain privacy and security of workforce records
-* Deliver a lightweight mobile-first solution
+### In Progress
 
----
+- BlazeFace integration
+- MobileFaceNet embedding generation
+- MediaPipe liveness detection
 
-## Repository Structure
+### Planned
 
-```text
-android/
-ios/
-src/
- ├── screens/
- ├── navigation/
- ├── state/
- ├── ai/
- ├── native/
- ├── components/
- └── utils/
-
-App.tsx
-package.json
-README.md
-```
+- AWS synchronization
+- SQLCipher encrypted storage
+- Device-bound identity vault
+- Production deployment optimization
 
 ---
 
@@ -190,7 +168,7 @@ README.md
 
 🚧 Active Development
 
-NHAI SecureID currently provides a functional offline-first mobile workflow for enrollment, verification, and synchronization management. Advanced computer vision and biometric authentication modules are under active development.
+Current repository represents a working offline-first prototype with enrollment, verification, and synchronization workflows. Advanced biometric recognition and liveness detection modules are under development.
 
 ---
 
@@ -198,10 +176,10 @@ NHAI SecureID currently provides a functional offline-first mobile workflow for 
 
 **Rachna Mohapatra**
 
-Built as part of NHAI Hackathon 7.0 and continued as an independent engineering project.
+React Native • AI/ML • Computer Vision
 
 ---
 
 ## License
 
-This project is intended for educational, research, and portfolio purposes.
+This project is currently released for educational and research purposes.
