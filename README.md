@@ -1,79 +1,207 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# NHAI SecureID
 
-# Getting Started
+> Verify Anywhere. Trust Everywhere.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+NHAI SecureID is an offline-first workforce identity verification platform built using React Native. The project was originally developed for NHAI Hackathon 7.0 and is being enhanced into a production-grade biometric authentication system designed for deployment in remote, low-connectivity environments.
 
-## Step 1: Start the Metro Server
+---
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Overview
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Field personnel working on highway construction and infrastructure projects often operate in areas where internet connectivity is unreliable or unavailable. Traditional cloud-dependent authentication systems become ineffective in such environments, leading to operational delays and identity verification challenges.
 
-```bash
-# using npm
-npm start
+NHAI SecureID addresses this problem by providing a mobile-based offline verification workflow that enables workforce enrollment, identity validation, local record management, and synchronization once connectivity is restored.
 
-# OR using Yarn
-yarn start
+---
+
+## Key Features
+
+### Offline-First Architecture
+
+* Operates without active internet connectivity
+* Designed for remote and zero-network zones
+* Local-first verification workflow
+
+### Workforce Enrollment
+
+* Camera-based worker enrollment
+* Unique worker ID generation
+* Local registry management
+
+### Identity Verification
+
+* Camera-assisted verification workflow
+* Verification logging and audit trail support
+* Designed for future biometric matching integration
+
+### Synchronization Center
+
+* Offline queue management
+* Sync status dashboard
+* Designed for AWS Datalake integration
+
+### Cross-Platform Deployment
+
+* Android support
+* iOS-ready architecture
+* React Native codebase
+
+---
+
+## Current Implementation
+
+The current prototype includes:
+
+✅ React Native application architecture
+
+✅ Android deployment pipeline
+
+✅ Camera integration using Vision Camera
+
+✅ Workforce enrollment workflow
+
+✅ Worker registry management
+
+✅ Verification workflow
+
+✅ Synchronization dashboard
+
+✅ Offline state management
+
+✅ Navigation and multi-screen application structure
+
+---
+
+## System Architecture
+
+```text
+Camera
+   │
+   ▼
+Workforce Enrollment
+   │
+   ▼
+Local Identity Registry
+   │
+   ▼
+Identity Verification
+   │
+   ▼
+Pending Sync Queue
+   │
+   ▼
+Synchronization Layer
+   │
+   ▼
+NHAI Datalake Integration
 ```
 
-## Step 2: Start your Application
+---
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Technology Stack
 
-### For Android
+### Mobile Application
 
-```bash
-# using npm
-npm run android
+* React Native
+* TypeScript
+* React Navigation
+* React Native Vision Camera
 
-# OR using Yarn
-yarn android
+### State Management
+
+* React Context API
+* Local application state
+
+### Development Environment
+
+* Android Studio
+* Gradle
+* Java 17
+* React Native CLI
+
+---
+
+## In Progress
+
+The following enhancements are currently being developed:
+
+* Real-time face detection
+* Facial embedding generation
+* Liveness detection pipeline
+* Secure biometric storage
+* Performance optimization for mid-range devices
+
+---
+
+## Planned Enhancements
+
+### Computer Vision
+
+* BlazeFace face detection
+* MobileFaceNet face recognition
+* MediaPipe Face Mesh liveness verification
+
+### Security
+
+* AES-256 encrypted local storage
+* Device-bound identity vault
+* Secure synchronization workflow
+
+### Cloud Integration
+
+* AWS synchronization services
+* Datalake 3.0 integration
+* Sync-and-purge architecture
+
+---
+
+## Project Goals
+
+* Enable workforce authentication in remote locations
+* Reduce proxy attendance and identity fraud
+* Support low-connectivity infrastructure projects
+* Maintain privacy and security of workforce records
+* Deliver a lightweight mobile-first solution
+
+---
+
+## Repository Structure
+
+```text
+android/
+ios/
+src/
+ ├── screens/
+ ├── navigation/
+ ├── state/
+ ├── ai/
+ ├── native/
+ ├── components/
+ └── utils/
+
+App.tsx
+package.json
+README.md
 ```
 
-### For iOS
+---
 
-```bash
-# using npm
-npm run ios
+## Project Status
 
-# OR using Yarn
-yarn ios
-```
+🚧 Active Development
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+NHAI SecureID currently provides a functional offline-first mobile workflow for enrollment, verification, and synchronization management. Advanced computer vision and biometric authentication modules are under active development.
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+---
 
-## Step 3: Modifying your App
+## Author
 
-Now that you have successfully run the app, let's modify it.
+**Rachna Mohapatra**
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Built as part of NHAI Hackathon 7.0 and continued as an independent engineering project.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+---
 
-## Congratulations! :tada:
+## License
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is intended for educational, research, and portfolio purposes.
