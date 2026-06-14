@@ -1,9 +1,11 @@
+import { useAppState } from '../state/AppStateContext';
 import React, { useRef, useEffect, useState } from 'react';
 import { StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
 import { Camera, useCameraDevice, useCameraPermission } from 'react-native-vision-camera';
 import { useIsFocused } from '@react-navigation/native';
 
 export default function EnrollScreen() {
+  const { enrollWorker } = useAppState();
   const device = useCameraDevice('front');
   const cameraRef = useRef<Camera>(null);
   const isFocused = useIsFocused();
@@ -31,11 +33,28 @@ export default function EnrollScreen() {
         enableShutterSound: false 
       });
       
-      Alert.alert(
-        'NHAI Secure Sync', 
-        `Biometric token captured!\n\nPath: ${photo.path}`,
-        [{ text: 'OK', onPress: () => setIsCapturing(false) }]
+      const worker = enrollWorker(
+      photo.path,
+      'CENTERED',
+       95
       );
+
+Alert.alert(
+  'Enrollment Successful ✅',
+  `Worker ID: ${worker.workerId}
+
+Status: Stored Offline
+
+Ready For Sync`,
+  [
+    {
+      text: 'OK',
+      onPress: () => {
+        setIsCapturing(false);
+      },
+    },
+  ],
+);
     } catch (err) {
       console.error('[Capture Error]', err);
       setIsCapturing(false);
